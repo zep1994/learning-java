@@ -3,11 +3,12 @@ public class Main {
 
         int employeeAge = 34;
         double employeeID = 3.34;
-        char employeeFirstInitial = 'T';
-        char employeeLastInitial = 'M';
         boolean isActive = true;
         String employeeFirstName = "Thomas";
         String employeeLastName = "Matlock";
+        char employeeFirstInitial = employeeFirstName.charAt(0);
+        char employeeLastInitial = employeeLastName.charAt(0);
+
 
         System.out.println(employeeAge);
         System.out.println(employeeID);
