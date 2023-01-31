@@ -22,6 +22,14 @@ public class Main {
             System.out.println("I do not understand");
         }
 
+        while (isActive) {
+            System.out.println("Is Active");
+            String userInput = input.next();
+
+            if(userInput.equals("no")) {
+                isActive = false;
+            }
+        }
 
         System.out.println(employeeAge);
         System.out.println(employeeID);
