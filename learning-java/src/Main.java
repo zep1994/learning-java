@@ -11,6 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
         Triangle triangleA = new Triangle(15, 8, 15, 8, 17);
+
+        double findArea = triangleA.findArea();
+        System.out.println(findArea);
 //
 //        double salary = salaryCalculator(40, 15);
 //        System.out.println(salary);
