@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,6 +12,8 @@ public class Main {
         char employeeLastInitial = employeeLastName.charAt(0);
 
         System.out.println(employeeFirstName + " " + employeeLastName + " is Active? " + isActive);
+        Scanner input = new Scanner(System.in);
+        employeeID = input.nextDouble();
 
 
         System.out.println(employeeAge);
