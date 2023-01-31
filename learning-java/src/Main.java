@@ -14,6 +14,13 @@ public class Main {
         System.out.println(employeeFirstName + " " + employeeLastName + " is Active? " + isActive);
         Scanner input = new Scanner(System.in);
         employeeID = input.nextDouble();
+        if (employeeID > 5) {
+            System.out.println("Please Try Again");
+        } else if (employeeID < 5){
+            employeeID = input.nextDouble();
+        } else {
+            System.out.println("I do not understand");
+        }
 
 
         System.out.println(employeeAge);
