@@ -9,6 +9,8 @@ public class Main {
         char employeeFirstInitial = employeeFirstName.charAt(0);
         char employeeLastInitial = employeeLastName.charAt(0);
 
+        System.out.println(employeeFirstName + " " + employeeLastName + " is Active? " + isActive);
+
 
         System.out.println(employeeAge);
         System.out.println(employeeID);
