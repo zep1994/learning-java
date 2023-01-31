@@ -1,12 +1,16 @@
 public class Main {
 
-    public static double salaryCalculator(int employeeHours, double employeeWage) {
+    public static double salaryCalculator(int employeeHours, int employeeWage) {
+        if (employeeWage < 0 || employeeHours < 0) {
+            return -1;
+        }
+
         double weeklySalary = employeeHours * employeeWage;
         return weeklySalary * 52;
     }
     public static void main(String[] args) {
 
-        double salary = salaryCalculator(40, 7.25);
+        double salary = salaryCalculator(40, 15);
         System.out.println(salary);
 
 //        int employeeAge = 34;
