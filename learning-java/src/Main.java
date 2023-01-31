@@ -1,17 +1,19 @@
 public class Main {
 
-    public static double salaryCalculator(int employeeHours, int employeeWage) {
-        if (employeeWage < 0 || employeeHours < 0) {
-            return -1;
-        }
-
-        double weeklySalary = employeeHours * employeeWage;
-        return weeklySalary * 52;
-    }
+//    public static double salaryCalculator(int employeeHours, int employeeWage) {
+//        if (employeeWage < 0 || employeeHours < 0) {
+//            return -1;
+//        }
+//
+//        double weeklySalary = employeeHours * employeeWage;
+//        return weeklySalary * 52;
+//    }
     public static void main(String[] args) {
 
-        double salary = salaryCalculator(40, 15);
-        System.out.println(salary);
+        Triangle triangleA = new Triangle(15, 8, 15, 8, 17);
+//
+//        double salary = salaryCalculator(40, 15);
+//        System.out.println(salary);
 
 //        int employeeAge = 34;
 //        double employeeID = 3.34;
