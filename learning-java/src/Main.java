@@ -12,20 +12,47 @@ public class Main {
 //        double weeklySalary = employeeHours * employeeWage;
 //        return weeklySalary * 52;
 //    }
+    public static Object spoon = new Object();
+    public static Object bowl = new Object();
     public static void main(String[] args) {
 
-        LinkedHashMap<String, Integer> phonebook = new LinkedHashMap(4, 0.75f, true);
-        phonebook.put("Kevin", 12345);
-        phonebook.put("Jill", 98765);
-        phonebook.put("Brenda", 123123);
-        phonebook.put("Gary", 22222);
-        System.out.println("Kevin's number: " + phonebook.get("Kevin"));
+            Thread cook1 = new Thread(() -> {
+                synchronized (spoon) {
+                    System.out.println("Cook1: Holding the spoon...");
+                    System.out.println("Cook1: Waiting for the bowl...");
 
-        System.out.println("\nList of contacts in phonebook:");
-        for(Map.Entry<String, Integer> entry: phonebook.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-        
+                    synchronized (bowl) {
+                        System.out.println("Cook1: Holding the spoon and the bowl.");
+                    }
+                }
+            });
+
+            Thread cook2 = new Thread(() -> {
+                synchronized (spoon) {
+                    System.out.println("Cook2: Holding the bowl...");
+                    System.out.println("Cook2: Waiting for the spoon...");
+
+                    synchronized (bowl) {
+                        System.out.println("Cook1: Holding the spoon and the bowl.");
+                    }
+                }
+            });
+
+            cook1.start();
+            cook2.start();
+//
+//        LinkedHashMap<String, Integer> phonebook = new LinkedHashMap(4, 0.75f, true);
+//        phonebook.put("Kevin", 12345);
+//        phonebook.put("Jill", 98765);
+//        phonebook.put("Brenda", 123123);
+//        phonebook.put("Gary", 22222);
+//        System.out.println("Kevin's number: " + phonebook.get("Kevin"));
+//
+//        System.out.println("\nList of contacts in phonebook:");
+//        for(Map.Entry<String, Integer> entry: phonebook.entrySet()) {
+//            System.out.println(entry.getKey() + ": " + entry.getValue());
+//        }
+
 //        HashMap<String, Integer> phonebook = new HashMap<>();
 //        phonebook.put("Kevin", 12345);
 //        phonebook.put("Jill", 98765);
